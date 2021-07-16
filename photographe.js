@@ -18,6 +18,7 @@ const closeIcon = document.getElementById('close-modal');
 const filterBtn = document.getElementById('filter-button_one');
 const filterBtns = document.querySelectorAll('[data-filter]');
 const contentSlider = document.getElementById('container-main__center');
+const information = document.getElementById("information-likes-price")
 var photographeId = params.get("id");
 var cards;
 var currentPicture;
@@ -121,6 +122,7 @@ function toNavigate(e) {
 function toPrintSliders(bol) {
     let dataModal = document.querySelectorAll('[data-modal]');
     cards = document.querySelectorAll(".card");
+    
     cards.forEach(el => {
         bol === "true" ? el.style.opacity = 0 : el.style.opacity = 1;
         el.dataset.pos = `${bol}`;
@@ -147,12 +149,14 @@ function increment(e) {
 function openSlider(e) {
     currentPicture = e.currentTarget.parentElement;
     if (e.key === "Enter" || e.type === "click") {
+        information.style.display="none";
         toPrintSliders("true");
     }
 }
 
 function closeSlider(e) {
     if (e.key != "Tab" && e.key != "Shift") {
+        information.style.display="flex";
         toPrintSliders("false");
     }
 }

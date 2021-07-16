@@ -52,6 +52,7 @@
   left: 0;
   right: 0;
   z-index: 5;
+  cursor: pointer;
   @include desktop {
     position: initial;
     width: 170px;
