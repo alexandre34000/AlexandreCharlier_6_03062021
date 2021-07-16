@@ -92,7 +92,6 @@ async function getPictures(filter) {
     }
     let name = localStorage.getItem('name');
     let totalLikes = await createPagePhotographe(file, name);
-    console.log("total Likes " + totalLikes);
     let pictures = document.querySelectorAll(".picture")
     for (let p of pictures) {
         p.addEventListener('click', openSlider);
@@ -122,7 +121,6 @@ function toNavigate(e) {
 function toPrintSliders(bol) {
     let dataModal = document.querySelectorAll('[data-modal]');
     cards = document.querySelectorAll(".card");
-
     cards.forEach(el => {
         bol === "true" ? el.style.opacity = 0 : el.style.opacity = 1;
         el.dataset.pos = `${bol}`;
