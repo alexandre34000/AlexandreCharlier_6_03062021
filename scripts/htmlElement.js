@@ -99,6 +99,7 @@ export function createDomObject(objs) {
 export function createPagePhotographe(objs, name) {
   let photographName = name.replace(/ /g, "");
   let totalLikes = 0;
+  let i=0;
   return new Promise((resolve, reject) => {
     contentParent = document.getElementById("content-main__center");
     for (let obj of objs) {
@@ -106,7 +107,8 @@ export function createPagePhotographe(objs, name) {
         'data-pos': 'false',
         'data-visibility': 'false',
         'data-modal': 'false',
-        class: 'card'
+        class: 'card',
+        'data-nb':`${i}`
       });
       let figcaption = createNodeWithMultiplesAttributes('figcaption', {
         class: "legend"
@@ -151,6 +153,7 @@ export function createPagePhotographe(objs, name) {
       append(contentParent, figure);
       
       totalLikes = totalLikes + obj.likes;
+      i++;
     }
     resolve(totalLikes)
   })

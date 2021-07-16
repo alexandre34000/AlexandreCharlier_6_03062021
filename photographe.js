@@ -167,9 +167,9 @@ function toChangeSlide(value) {
     currentPicture.style.zIndex = 0;
     let i = cards.length;
     if (value == "aft") {
-        currentPicture === cards[0] ? otherPicture = card[i - 1] : otherPicture = currentPicture.previousSibling;
+        currentPicture === cards[0] ? otherPicture = cards[i - 1] : otherPicture = currentPicture.previousSibling;
     } else {
-        currentPicture === cards[i - 1] ? otherPicture = card[0] : otherPicture = currentPicture.nextSibling;
+        currentPicture == cards[i - 1] ? otherPicture = cards[0] : otherPicture = currentPicture.nextSibling;
     }
     otherPicture.style.opacity = 1;
     otherPicture.style.zIndex = 10;
