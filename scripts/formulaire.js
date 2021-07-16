@@ -11,7 +11,7 @@
 
 const params = new URL(window.location.href).searchParams;
 const modalbg = document.querySelector("#container-main__formulaire");
-const modalBtnClose = document.querySelectorAll(".close");
+const modalBtnClose = document.querySelectorAll(".closeModal");
 const submitBtn = document.querySelector("#submit");
 const modalBody = document.querySelector(".modal-body");
 const msgBox = document.querySelector("#container-msg");

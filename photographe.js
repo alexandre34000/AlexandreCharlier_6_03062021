@@ -122,7 +122,6 @@ function toNavigate(e) {
 function toPrintSliders(bol) {
     let dataModal = document.querySelectorAll('[data-modal]');
     cards = document.querySelectorAll(".card");
-    
     cards.forEach(el => {
         bol === "true" ? el.style.opacity = 0 : el.style.opacity = 1;
         el.dataset.pos = `${bol}`;

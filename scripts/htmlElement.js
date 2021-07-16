@@ -108,7 +108,6 @@ export function createPagePhotographe(objs, name) {
         'data-visibility': 'false',
         'data-modal': 'false',
         class: 'card',
-        'data-nb':`${i}`
       });
       let figcaption = createNodeWithMultiplesAttributes('figcaption', {
         class: "legend"
@@ -153,7 +152,6 @@ export function createPagePhotographe(objs, name) {
       append(contentParent, figure);
       
       totalLikes = totalLikes + obj.likes;
-      i++;
     }
     resolve(totalLikes)
   })
