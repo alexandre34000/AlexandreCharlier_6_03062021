@@ -1,0 +1,65 @@
+/**
+* _cards-home.scss 1.0 juin 2021 by Alexandre CHARLIER  
+*
+* Author : Alexandre CHARLIER.
+* GitHub : https://github.com/alexandre34000/AlexandreCharlier_6_03062021
+* GitHub Pages :https://alexandre34000.github.io/AlexandreCharlier_6_03062021/.
+* Theme Name : fisheye .
+* Description : style pour les cartes des photographes de la page index.html.
+* Date: juin 2021. 
+*/
+.content-cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.layout-card {
+  width: 320px;
+  height: auto;
+  padding: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.layout-card__link {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.layout-card__image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  overflow-x: hidden;
+  border-radius: 50%;
+}
+
+.layout-card__name {
+  margin-top: 20px;
+  height: 47px;
+  line-height: 47px;
+}
+
+.layout-card__city {
+  font-size: 13px;
+  color: $secondary-font-backLight;
+}
+
+.layout-card__tagline {
+  font-size: 10px;
+  color: $secondary-font-backDark;
+}
+
+.layout-card__price {
+  margin-bottom: 6px;
+  font-size: 9px;
+  color: $primary-font-lightGrey;
+}

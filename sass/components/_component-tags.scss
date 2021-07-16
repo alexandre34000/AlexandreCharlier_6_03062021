@@ -1,0 +1,45 @@
+/**
+* _component-tags.scss 1.0 juin 2021 by Alexandre CHARLIER  
+*
+* Author : Alexandre CHARLIER.
+* GitHub : https://github.com/alexandre34000/AlexandreCharlier_6_03062021
+* GitHub Pages :https://alexandre34000.github.io/AlexandreCharlier_6_03062021/.
+* Theme Name : fisheye .
+* Description : style pour les tags ou chips.
+* Date: juin 2021. 
+*/
+
+.cmpt-tags__menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include desktop {
+  }
+}
+.cmpt-tags__table {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.cmpt-tags__list {
+  display: inline-block;
+  height: 22px;
+  box-sizing: border-box;
+  border: 0.5px solid #c4c4c4;
+  border-radius: 11px;
+  margin: 4px 3px;
+}
+.cmpt-tags__navigation {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.cmpt-tags__name {
+  padding: 0 5px;
+  font-size: 14px;
+  color: $primary-font-link;
+  font-weight: 500;
+  @include desktop {
+  }
+}

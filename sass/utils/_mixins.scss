@@ -1,0 +1,30 @@
+/**
+* _mixins.scss 1.0 juin 2021 by Alexandre CHARLIER  
+*
+* Author : Alexandre CHARLIER.
+* GitHub : https://github.com/alexandre34000/AlexandreCharlier_6_03062021
+* GitHub Pages :https://alexandre34000.github.io/AlexandreCharlier_6_03062021/.
+* Theme Name : fisheye .
+* Description : Déclaration des mixins.
+* Date: juin 2021. 
+*/
+
+/*-- Media query-- */
+
+@mixin mobile-landscape{
+  @media screen and(min-width: map-get($breakpoints, mobile-landscape)) {
+    @content;
+  }
+}
+
+@mixin tablette-only {
+  @media screen and(min-width: map-get($breakpoints, tablette)) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: map-get($breakpoints , desktop)) {
+    @content;
+  }
+}

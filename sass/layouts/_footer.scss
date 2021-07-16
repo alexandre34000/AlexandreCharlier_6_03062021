@@ -1,0 +1,59 @@
+/**
+* _footer.scss 1.0 juin 2021 by Alexandre CHARLIER  
+*
+* Author : Alexandre CHARLIER.
+* GitHub : https://github.com/alexandre34000/AlexandreCharlier_6_03062021
+* GitHub Pages :https://alexandre34000.github.io/AlexandreCharlier_6_03062021/.
+* Theme Name : fisheye .
+* Description : style du footer.
+* Date: juin 2021. 
+*/
+.footer-container {
+  display: block;
+  background-color: $secondary-background-grey;
+}
+.footer-content {
+  margin: 10px;
+  padding: 10 5px;
+  @include tablette-only {
+    height: 150px;
+  }
+}
+.footer-title {
+  padding: 20px 0;
+  @include tablette-only {
+    text-align: center;
+  }
+}
+.footer-title__logo {
+  width: auto;
+  height: 20px;
+  @include tablette-only {
+    height: 25px;
+  }
+}
+.footer-list {
+  color: $primary-font-link;
+
+  @include tablette-only {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+.footer-list__item {
+  cursor: pointer;
+}
+
+.footer-list__item:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.item-nav {
+  display: block;
+  padding: 5px 0 5px 0;
+  font-size: 15px;
+  color: $primary-font-link;
+  font-stretch: ultra-expanded;
+  font-weight: 500;
+}

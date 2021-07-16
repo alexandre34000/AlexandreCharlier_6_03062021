@@ -1,0 +1,60 @@
+/**
+* _component-btnContact.scss 1.0 juin 2021 by Alexandre CHARLIER  
+*
+* Author : Alexandre CHARLIER.
+* GitHub : https://github.com/alexandre34000/AlexandreCharlier_6_03062021
+* GitHub Pages :https://alexandre34000.github.io/AlexandreCharlier_6_03062021/.
+* Theme Name : fisheye .
+* Description : style pour les boutons.
+* Date: juin 2021. 
+*/
+
+.btn {
+  display: block;
+  width: 170px;
+  height: 69px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 5px;
+  border: 0;
+  margin: 12px auto 0 auto;
+  @include desktop {
+    margin: 26px 0 0 0;
+  }
+}
+
+.btn :disabled,
+.btn[disabled] {
+  background-color: $primary-font-lightGrey;
+}
+
+.cmpt-btn__dark {
+  @extend.btn;
+  background-color: $primary-background-button;
+  color: $primary-font-button;
+}
+
+.cpmt-btn__light {
+  @extend.btn;
+  background-color: $secondary-background-button;
+  color: $secondary-font-button;
+}
+
+.btnModal {
+  @extend.cmpt-btn__dark;
+  position: fixed;
+  margin-top:0;
+  margin-left: auto;
+  margin-right: auto;
+  height: 35px;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  @include desktop {
+    position: initial;
+    width: 170px;
+    height: 69px;
+  }
+}

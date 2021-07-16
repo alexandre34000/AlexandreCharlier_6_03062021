@@ -1,0 +1,295 @@
+/**
+* _page-photographies.scss 1.0 juin 2021 by Alexandre CHARLIER  
+*
+* Author : Alexandre CHARLIER.
+* GitHub : https://github.com/alexandre34000/AlexandreCharlier_6_03062021
+* GitHub Pages :https://alexandre34000.github.io/AlexandreCharlier_6_03062021/.
+* Theme Name : fisheye .
+* Description : import scss style for page photographe.html.
+* Date: juin 2021. 
+*/
+
+.container-main__header {
+  margin-top: 100px;
+  @include desktop {
+    margin-top: 120px;
+    width: 84%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.content-main__header {
+  padding: 30px 20px 10px 20px;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: auto 50px;
+  @include tablette-only {
+    padding: 30px 4% 30px 4%;
+  }
+  @include desktop {
+    grid-template-columns: 40% auto auto;
+    background-color: $secondary-background-grey;
+  }
+}
+
+#content-main__header-left {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  padding-top: 10px;
+  @include desktop {
+    grid-column: 1;
+  }
+}
+
+#content-main__header-center {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: left;
+  padding-top: 10px;
+}
+
+#content-main__header-right {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: right;
+  align-self: center;
+}
+#content-main__header-bottom {
+  grid-column: 1 / span 3;
+  grid-row: 2;
+  align-self: center;
+}
+
+#header-left__name {
+  font-size: 36px;
+  color: $primary-font-backLight;
+  font-weight: 400;
+  margin: 0 0 5px 0;
+  white-space: wrap;
+  @include desktop {
+    margin-bottom: 10px;
+    font-size: 64px;
+  }
+}
+
+#header-right__logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  @include desktop {
+    width: 200px;
+    height: 200px;
+  }
+}
+.header-left__adress {
+  margin-bottom: 10px;
+  @include tablette-only {
+    margin-bottom: 20px;
+  }
+}
+#header-left__city,
+#header-left__country {
+  font-size: 13px;
+  color: $secondary-font-backLight;
+  font-weight: 400;
+  @include desktop {
+    font-size: 24px;
+  }
+}
+#header-left__describ {
+  font-size: 13px;
+  color: $secondary-font-backGrey;
+  font-weight: 400;
+
+  @include desktop {
+    font-size: 18px;
+  }
+}
+
+.filter {
+  display: none;
+  @include tablette-only {
+    display: block;
+    width: 50%;
+    margin: 30px 8% 30px 8%;
+    position: relative;
+  }
+}
+.filter-label {
+  display: block;
+  width: 100px;
+  height: 60px;
+}
+.filter-label_texte {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 60px;
+}
+.filter-select {
+  display: inline-block;
+  position: absolute;
+  padding: 0 50px 0 20px;
+  top: 0;
+  left: 120px;
+  width: 170px;
+  background-color: $primary-background-button;
+  z-index: 5;
+}
+
+.filter-button {
+  display: none;
+  border: none;
+  width: 130px;
+  height: 60px;
+  font-size: 18px;
+  text-align: left;
+  line-height: 60px;
+  color: $primary-font-button;
+  background-color: transparent;
+}
+
+#filter-button_one {
+  display: block;
+  position: relative;
+}
+
+#filter-button_one:after {
+  display: block;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  width: 30px;
+  height: 20px;
+  content: "";
+  background: url("/dist/pictures/icons/arrow_up.svg") no-repeat 100% 1%;
+  filter: invert(99%) sepia(0%) saturate(7500%) hue-rotate(245deg)
+    brightness(103%) contrast(105%);
+}
+#filter-button_one[data-filtermain="true"]:after {
+  background: url("/dist/pictures/icons/arrow_down.svg") no-repeat 100% 1%;
+}
+
+#filter-button_two {
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+}
+
+#container-main__center[data-modal="true"] {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: $primary-background-light;
+  z-index: 5;
+  @include tablette-only {
+    align-items: flex-end;
+  }
+}
+
+#content-main__center {
+  padding: 0 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  @include desktop {
+    padding: 0 8%;
+  }
+}
+
+#content-main__center[data-modal="true"] {
+  position: relative;
+  width: 100%;
+  height: 33%;
+  padding: 0;
+  @include tablette-only {
+    width: 90%;
+    height: 80%;
+  }
+}
+
+.utility-modal {
+  display: none;
+  width: 7%;
+}
+
+.utility-modal[data-utility="true"] {
+  display: block;
+  filter: invert(17%) sepia(24%) saturate(6713%) hue-rotate(342deg)
+    brightness(107%) contrast(105%);
+}
+
+#nav-prev {
+  position: absolute;
+  top: 45%;
+  right: 91%;
+  @include tablette-only {
+    top: 36%;
+  }
+}
+
+#nav-fwd {
+  position: absolute;
+  top: 45%;
+  left: 91%;
+  @include tablette-only {
+    top: 36%;
+  }
+}
+
+#close-modal {
+  position: absolute;
+  top: 1%;
+  left: 91%;
+}
+
+#container-formulaire--abs {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#information-likes-price {
+ display:none;
+  position: fixed;
+  right: 40px;
+  bottom: 0;
+  display: none;
+  padding: 0 20px;
+  width: 378px;
+  height: 89px;
+  background-color: $secondary-background-button;
+  z-index: 5;
+  border-radius: 5px;;
+  @include desktop {
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+}
+
+#nb-likes, #price {
+  display: inline-block;
+  font-size: 35px;
+  font-weight:800;
+}
+
+.hearth-likes{
+  display:inline-block;
+  height:30px;
+  width:30px;
+  margin-left: 10px;
+}
+
+

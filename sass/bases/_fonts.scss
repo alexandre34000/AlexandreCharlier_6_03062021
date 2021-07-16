@@ -1,0 +1,64 @@
+/**
+* _fonts.scss 1.0 juin 2021 by Alexandre CHARLIER  
+*
+* Author : Alexandre CHARLIER.
+* GitHub : https://github.com/alexandre34000/AlexandreCharlier_6_03062021
+* GitHub Pages :https://alexandre34000.github.io/AlexandreCharlier_6_03062021/.
+* Theme Name : fisheye .
+* Description : styles generaux des characteres pour le projet.
+* Date: juin 2021. 
+*/
+
+html{
+  font-size:62.5%;
+  @include mobile-landscape{
+      font-size:75%;
+  }
+}
+h1 {
+  font-size :14px;
+  @include tablette-only{
+    font-size:20px;
+  }
+  @include desktop{
+    font-size: 36px;
+  }
+}
+
+h2 {
+  font-size: 36px;
+  color: $primary-font-backLight;
+  font-weight: 400;
+}
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+a,
+label {
+  font-family: $font-texte, sans-serif;
+}
+
+h3 {
+  font-size: $font-md;
+  font-weight: 900;
+}
+h4 {
+  font-size: $font-sm;
+  font-weight: 500;
+}
+p,
+span
+ {
+  font-size: $font-lg;
+}
+
+#nojs{
+  margin: 100px 0;
+  text-align: center;
+  font-size: $font-big;
+  font-weight : 800;
+  color: $primary-font-backLight;
+}

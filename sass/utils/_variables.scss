@@ -1,0 +1,69 @@
+/**
+* _variables.scss 1.0 juin 2021 by Alexandre CHARLIER  
+*
+* Author : Alexandre CHARLIER.
+* GitHub : https://github.com/alexandre34000/AlexandreCharlier_6_03062021
+* GitHub Pages :https://alexandre34000.github.io/AlexandreCharlier_6_03062021/.
+* Theme Name : fisheye .
+* Description : variables scss style for this project.html.
+* Date: juin 2021. 
+*/
+
+
+/*--colors and score WCAG--*/
+$primary-background-dark:#901C1C;
+$primary-font-backDark: #D3573C;
+$primary-background-light: #FFFFFF;
+$primary-font-backLight: #D3573C;
+$primary-font-lightGrey: #757575;
+$secondary-background-dark:#D3573C;
+$secondary-font-backDark: #000000;
+$secondary-background-grey: #FAFAFA;
+$secondary-font-backGrey: #525252;
+$secondary-background-light: #FFFFFF;
+$secondary-font-backLight: #901C1C;
+
+/*--Buttons--*/
+$primary-background-button: #911C1C;
+$primary-font-button: #FFFFFF;
+$secondary-background-button: #DB8876;
+$secondary-font-button: #000000;
+
+/*--links--*/
+$primary-background-link: #FFFFFF;
+$primary-border-link: #C4C4C4;
+$primary-font-link: #901C1C;
+$secondary-background-link: #911C1C;
+$secondary-border-link: #C4C4C4;
+$secondary-font-link: #FFFFFF;
+
+
+/*--divers--*/
+$tertiary:#99E2D0;
+$color-white:#ffffff;
+$color-grey-light:#eaeaea;
+$color-font:#f6f6f6;
+$color-grey-dark: #353535;
+$color-grey: #312E2E;
+
+/*--font--*/
+$font-exsm: 1.5rem;
+$font-sm: 1.6rem;
+$font-md: 1.8rem;
+$font-lg: 2.3rem;
+$font-exlg: 2.5rem;
+$font-big: 3rem;
+
+/*--font-familly--*/
+$font-texte :'Roboto';
+
+/*--media query--*/
+$breakpoints:(
+    mobile: 320px,
+    mobile-landscape: 576px,
+    tablette: 768px,
+    desktop: 960px
+);
+
+
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="title" content="Site de photographes " />
+    <meta name="keywords" content="photographies photographes images arts portraits" />
+    <meta name="description" content="Site de presentation des photographes et de leurs oeuvres " />
+    <meta name="author" content="Alexandre CHARLIER " />
+    <title>FISHEYE site de photographes</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" />
+    <link rel="icon" type="image/svg+xml" href="./dist/pictures/logo/Group.svg" sizes="150x38" />
+    <link rel="stylesheet" href="./dist/css/home-style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="container-header">
+            <nav class="content-scroll" aria-labelledby="content-scroll__texte-id" id="content-scroll"
+                data-value="false">
+                <a href="#main" class="content-scroll__link">
+                    <span class="content-scroll__texte" id="content-scroll__texte-id">Passer au contenu</span>
+                </a>
+            </nav>
+            <div class="content-header">
+                <div class="header-logo">
+                    <figure class="header-logo_nav" role="navigation" aria-labelledby="logo-nav__img-id">
+                        <a href="./index.html">
+                            <img class="logo-nav_img" id="logo-nav__img-id" src="./dist/pictures/logo/Group.png"
+                                alt="FISHEYE Home page" width="150" height="38">
+                        </a>
+                    </figure>
+                </div>
+                <div class="header-tags">
+                    <nav class="cmpt-tags__menu" aria-label="filtrer les photographes suivant tags">
+                        <ul class="cmpt-tags__table">
+                            <li class="cmpt-tags__list">
+                                <a class="cmpt-tags__navigation" href="#">
+                                    <span class="cmpt-tags__name">#Portrait</span>
+                                </a>
+                            </li>
+                            <li class="cmpt-tags__list">
+                                <a class="cmpt-tags__navigation" href="#">
+                                    <span class="cmpt-tags__name">#Art</span>
+                                </a>
+                            </li>
+                            <li class="cmpt-tags__list">
+                                <a class="cmpt-tags__navigation" href="#">
+                                    <span class="cmpt-tags__name">#Fashion</span>
+                                </a>
+                            </li>
+                            <li class="cmpt-tags__list">
+                                <a class="cmpt-tags__navigation" href="#">
+                                    <span class="cmpt-tags__name">#Architecture</span>
+                                </a>
+                            </li>
+                            <li class="cmpt-tags__list">
+                                <a class="cmpt-tags__navigation" href="#">
+                                    <span class="cmpt-tags__name">#Travel</span>
+                                </a>
+                            </li>
+                            <li class="cmpt-tags__list">
+                                <a class="cmpt-tags__navigation" href="#">
+                                    <span class="cmpt-tags__name">#Sport</span>
+                                </a>
+                            </li>
+                            <li class="cmpt-tags__list"><a class="cmpt-tags__navigation" href="#">
+                                    <span class="cmpt-tags__name">#Animals</span>
+                                </a>
+                            </li>
+                            <li class="cmpt-tags__list"><a class="cmpt-tags__navigation" href="#">
+                                    <span class="cmpt-tags__name">#Events</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="main">
+        <div class="container-main">
+            <div class="content-main">
+                <h1 class="content-main_title">Nos photographes</h1>
+                <div id="nojs" aria-hidden="true">Ce site web a besoin de javascript pour fonctionner <br/> Pour l'activer, vous pouvez suivre le lien suivant :<br/> <a target="_blank"href="https://www.enable-javascript.com/fr/">https://www.enable-javascript.com/fr/
+                        </a>.
+                </div>
+                <div class="container-cards">
+                    <div class="content-cards" id="authors">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <section class="footer-container">
+            <div class="footer-content">
+                <h2 class="footer-title" aria-label="Logo Fisheye">
+                    <img class="footer-title__logo" src=".dist/pictures/logo/group.png"
+                        srcset="./dist/pictures/logo/group.svg" alt="Fisheye company's logo'" width="150" height="50" />
+                </h2>
+                <ul class="footer-list">
+                    <li class="footer-list__item "><a class="item-nav" href="#">Proposer des photographies</a></li>
+                    <li class="footer-list__item "><a class="item-nav" href="#">Devenir partenaire</a></li>
+                    <li class="footer-list__item item3"><a class="item-nav" href="#">Mentions légales</a></li>
+                    <li class="footer-list__item item4"><a class="item-nav"
+                            href="mailto:alexandre.charlier@free.fr">Contact</a></li>
+                </ul>
+            </div>
+        </section>
+    </footer>
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
