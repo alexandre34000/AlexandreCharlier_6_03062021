@@ -28,7 +28,7 @@ modalBtnClose.forEach((btnClose) => {
 
 // close modal form
 function closeModal(e) {
-  if (e.key != "Tab" || e.type === "click") {
+  if ((e.key != "Tab" && e.key != "Shift") || e.type === "click") {
   modalbg.style.display = "none";
   formulaire.setAttribute('aria-hidden', 'true');
   main.setAttribute('aria-hidden', 'false');
