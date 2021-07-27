@@ -114,7 +114,8 @@ export function createPagePhotographe(objs, name) {
       figcaption.textContent = obj.title;
       let span = createNodeWithMultiplesAttributes('span', {
         class: "number",
-        'data-modal': 'false'
+        'data-modal': 'false',
+        'tabindex':'0'
       });
       span.textContent = obj.likes;
       let icon = createNodeWithMultiplesAttributes('img', {

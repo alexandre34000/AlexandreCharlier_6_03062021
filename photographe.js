@@ -102,6 +102,7 @@ async function getPictures(filter) {
     var like = document.querySelectorAll(".number");
     for (let l of like) {
         l.addEventListener('click', increment);
+        l.addEventListener('keydown',increment);
     }
 }
 
@@ -141,8 +142,11 @@ function toPrintSliders(bol) {
 
 function increment(e) {
     let target = e.currentTarget.childNodes[0].nodeValue;
+    if (e.key != "Tab" && e.key != "Shift"){
     let total = parseInt(target) + 1;
     e.currentTarget.childNodes[0].nodeValue = total.toString();
+    e.currentTarget.removeEventListener("click", increment);
+}   e.currentTarget.removeEventListener("keydown", increment);
 }
 
 function openSlider(e) {
