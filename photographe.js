@@ -1,39 +1,47 @@
 /**
-* photographe.js  1.0 juin 2021 by Alexandre CHARLIER  
-*
-* Author : Alexandre CHARLIER.
-* GitHub : https://github.com/alexandre34000/AlexandreCharlier_6_03062021
-* GitHub Pages :https://alexandre34000.github.io/AlexandreCharlier_6_03062021/.
-* Theme Name : fisheye .
-* Description : fichier pour le control de la page photographe.html.
-* Date: juin 2021. 
-*/
+ * photographe.js  1.0 juin 2021 by Alexandre CHARLIER
+ *
+ * Author : Alexandre CHARLIER.
+ * GitHub : https://github.com/alexandre34000/AlexandreCharlier_6_03062021
+ * GitHub Pages :https://alexandre34000.github.io/AlexandreCharlier_6_03062021/.
+ * Theme Name : fisheye .
+ * Description : fichier pour le control de la page photographe.html.
+ * Date: juin 2021.
+ */
 
-import { removeNode, createPagePhotographe, fillHeaderPagePhotographe } from './scripts/htmlElement.js';
-import { getPicturesByPhotographe, getHeaderByPhotographe } from './scripts/webService.js';
+import {
+    removeNode,
+    createPagePhotographe,
+    fillHeaderPagePhotographe,
+} from "./scripts/htmlElement.js";
+import {
+    getPicturesByPhotographe,
+    getHeaderByPhotographe,
+} from "./scripts/webService.js";
 
 const params = new URL(window.location.href).searchParams;
-const utilityModal = document.querySelectorAll('[data-utility]');
-const closeIcon = document.getElementById('close-modal');
-const filterBtn = document.getElementById('filter-button_one');
-const filterBtns = document.querySelectorAll('[data-filter]');
-const contentSlider = document.getElementById('container-main__center');
-const information = document.getElementById("information-likes-price")
+const utilityModal = document.querySelectorAll("[data-utility]");
+const closeIcon = document.getElementById("close-modal");
+const filterBtn = document.getElementById("filter-button_one");
+const filterBtns = document.querySelectorAll("[data-filter]");
+const contentSlider = document.getElementById("container-main__center");
+const information = document.getElementById("information-likes-price");
 var photographeId = params.get("id");
 var cards;
 var currentPicture;
 var open = false;
 var file;
 var price;
+var totalLikes;
 
 function addEvent() {
-    closeIcon.addEventListener('click', closeSlider);
-    closeIcon.addEventListener('keydown', closeSlider);
-    filterBtn.addEventListener('click', selectedFilter);
-    filterBtn.addEventListener('keydown', selectedFilter);
-    filterBtns.forEach(el => {
-        el.addEventListener('keydown', selectedFilter);
-        el.addEventListener('click', selectedFilter);
+    closeIcon.addEventListener("click", closeSlider);
+    closeIcon.addEventListener("keydown", closeSlider);
+    filterBtn.addEventListener("click", selectedFilter);
+    filterBtn.addEventListener("keydown", selectedFilter);
+    filterBtns.forEach((el) => {
+        el.addEventListener("keydown", selectedFilter);
+        el.addEventListener("click", selectedFilter);
     });
 }
 
@@ -41,7 +49,7 @@ function selectedFilter(e) {
     if (!open && (e.key != "Tab" || e.key == "ArrowDown")) {
         filterBtn.dataset.filtermain = "true";
         filterBtn.setAttribute("aria-expanded", "true");
-        filterBtns.forEach(el => {
+        filterBtns.forEach((el) => {
             el.style.display = "block";
             el.dataset.filter = "true";
         });
@@ -50,14 +58,17 @@ function selectedFilter(e) {
         if (e.key != "Tab") {
             let value = filterBtn.textContent;
             filterBtn.textContent = e.target.textContent;
-            filterBtn.setAttribute("aria-label", `Le trie est actuellement par ${e.target.textContent}`);
+            filterBtn.setAttribute(
+                "aria-label",
+                `Le trie est actuellement par ${e.target.textContent}`
+            );
             e.target.textContent = value;
             e.target.setAttribute("aria-label", `Triez par ${value}`);
             filterBtn.dataset.filtermain = "false";
             filterBtn.setAttribute("aria-expanded", "false");
-            filterBtns.forEach(el => {
+            filterBtns.forEach((el) => {
                 el.style.display = "none";
-                el.dataset.filter = "false"
+                el.dataset.filter = "false";
             });
             open = false;
             getPictures(filterBtn.textContent.replace(/ /g, ""));
@@ -69,7 +80,7 @@ async function getHeader() {
     const headerObjs = await getHeaderByPhotographe(photographeId);
     fillHeaderPagePhotographe(headerObjs);
     price = headerObjs[0].price;
-    document.getElementById('price').textContent = `${price}€ / jour`;
+    document.getElementById("price").textContent = `${price}€ / jour`;
 }
 
 async function getPictures(filter) {
@@ -91,75 +102,82 @@ async function getPictures(filter) {
         default:
             file.sort((a, b) => b.likes - a.likes);
     }
-    let name = localStorage.getItem('name');
-    let totalLikes = await createPagePhotographe(file, name);
-    let pictures = document.querySelectorAll(".picture")
+    let name = localStorage.getItem("name");
+    totalLikes = await createPagePhotographe(file, name);
+    let pictures = document.querySelectorAll(".picture");
     for (let p of pictures) {
-        p.addEventListener('click', openSlider);
-        p.addEventListener('keydown', openSlider);
+        p.addEventListener("click", openSlider);
+        p.addEventListener("keydown", openSlider);
     }
-    document.getElementById('nb-likes').textContent = totalLikes;
+    printTotalLikes();
+    // document.getElementById('nb-likes').textContent = totalLikes;
     var like = document.querySelectorAll(".number");
     for (let l of like) {
-        l.addEventListener('click', increment);
-        l.addEventListener('keydown',increment);
+        l.addEventListener("click", increment);
+        l.addEventListener("keydown", increment);
     }
+}
+
+function printTotalLikes() {
+    document.getElementById("nb-likes").textContent = totalLikes;
 }
 
 function toNavigate(e) {
     if (e.key != "Tab" && e.key != "Shift") {
         if (e.key == "ArrowLeft" || e.target.id == "nav-prev") {
             aftPicture();
-        }
-        else if (e.key == "ArrowRight" || e.target.id == "nav-fwd") {
+        } else if (e.key == "ArrowRight" || e.target.id == "nav-fwd") {
             fwdPicture();
-        }
-        else if (e.key == "Escape") {
+        } else if (e.key == "Escape") {
             closeSlider(e);
         }
     }
 }
 
 function toPrintSliders(bol) {
-    let dataModal = document.querySelectorAll('[data-modal]');
+    let dataModal = document.querySelectorAll("[data-modal]");
     cards = document.querySelectorAll(".card");
-    cards.forEach(el => {
-        bol === "true" ? el.style.opacity = 0 : el.style.opacity = 1;
+    cards.forEach((el) => {
+        bol === "true" ? (el.style.opacity = 0) : (el.style.opacity = 1);
         el.dataset.pos = `${bol}`;
         el.tabIndex = "-1";
     });
     currentPicture.style.opacity = 1;
     currentPicture.style.zIndex = 10;
-    dataModal.forEach(el => {
-        el.dataset.modal = `${bol}`
+    dataModal.forEach((el) => {
+        el.dataset.modal = `${bol}`;
     });
-    utilityModal.forEach(el => {
+    utilityModal.forEach((el) => {
         el.dataset.utility = `${bol}`;
     });
     contentSlider.focus();
-    contentSlider.addEventListener('keyup', toNavigate);
+    contentSlider.addEventListener("keyup", toNavigate);
 }
 
 function increment(e) {
     let target = e.currentTarget.childNodes[0].nodeValue;
-    if (e.key != "Tab" && e.key != "Shift"){
-    let total = parseInt(target) + 1;
-    e.currentTarget.childNodes[0].nodeValue = total.toString();
-    e.currentTarget.removeEventListener("click", increment);
-}   e.currentTarget.removeEventListener("keydown", increment);
+    if (e.key != "Tab" && e.key != "Shift") {
+        let total = parseInt(target) + 1;
+        e.currentTarget.childNodes[0].nodeValue = total.toString();
+        e.currentTarget.removeEventListener("click", increment);
+        e.currentTarget.removeEventListener("keydown", increment);
+        totalLikes= totalLikes+1;
+        printTotalLikes();
+    }
+    
 }
 
 function openSlider(e) {
     currentPicture = e.currentTarget.parentElement;
     if (e.key === "Enter" || e.type === "click") {
-        information.style.display="none";
+        information.style.display = "none";
         toPrintSliders("true");
     }
 }
 
 function closeSlider(e) {
     if (e.key != "Tab" && e.key != "Shift") {
-        information.style.display="flex";
+        information.style.display = "flex";
         toPrintSliders("false");
     }
 }
@@ -170,9 +188,13 @@ function toChangeSlide(value) {
     currentPicture.style.zIndex = 0;
     let i = cards.length;
     if (value == "aft") {
-        currentPicture === cards[0] ? otherPicture = cards[i - 1] : otherPicture = currentPicture.previousSibling;
+        currentPicture === cards[0]
+            ? (otherPicture = cards[i - 1])
+            : (otherPicture = currentPicture.previousSibling);
     } else {
-        currentPicture == cards[i - 1] ? otherPicture = cards[0] : otherPicture = currentPicture.nextSibling;
+        currentPicture == cards[i - 1]
+            ? (otherPicture = cards[0])
+            : (otherPicture = currentPicture.nextSibling);
     }
     otherPicture.style.opacity = 1;
     otherPicture.style.zIndex = 10;
@@ -181,11 +203,11 @@ function toChangeSlide(value) {
 
 window.aftPicture = function () {
     toChangeSlide("aft");
-}
+};
 
 window.fwdPicture = function () {
     toChangeSlide("fwd");
-}
+};
 
 getHeader();
 getPictures();
