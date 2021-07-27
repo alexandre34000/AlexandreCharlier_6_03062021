@@ -41,8 +41,20 @@ function toListener() {
         tag.onclick = (e) => {
             callApiWithFilterTags(e.target.textContent);
         };
+        tag.addEventListener("keydown", function(e){    
+            callApiWithFilterTags(e.target.textContent);
+        });
+       /*  tag.addEventListener("click", function(e){
+            callApiWithFilterTags(e.target.textContent);
+        } )
+        tag.addEventListener("keydown", function(e){
+             callApiWithFilterTags(e.target.textContent);
+        }) */
+
     })
 }
+
+
 
 window.filterTags = function () {
     let tagName = "travel";
