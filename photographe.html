@@ -5,11 +5,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta name="title" content="Site de photographes " />
   <meta name="keywords" content="photographies photographes images arts portraits" />
   <meta name="description" content="Site de presentation des photographes et de leurs oeuvres " />
   <meta name="author" content="Alexandre CHARLIER" />
-  <title>Fisheye site de photographes</title>
+  <title>Fisheye site de presentation d'un photographe et de ses oeuvres</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" />
   <link rel="icon" type="image/svg+xml" href="./dist/pictures/logo/Group.svg" sizes="150x38" />
   <link rel="stylesheet" href="./dist/css/photographies-style.css" />
@@ -35,7 +34,7 @@
       <section class="container-main__header" aria-label=" carte de visite">
         <div class="content-main__header">
           <div id="content-main__header-left">
-            <h1 id="header-left__name"></h1>
+            <h2 id="header-left__name"></h2>
             <div class="header-left__adress">
               <span id="header-left__city"></span><span>, </span>
               <span id="header-left__country"></span>
@@ -54,16 +53,16 @@
           <div id="content-main__header-bottom"></div>
         </div>
       </section>
-      <div class="filter">
-        <div class="filter-label">
-          <span class="filter-label_texte" id="filter-label"
-            aria-label=" Trier les widgets des photographes par popularité, date, ou like">Trier par</span>
+      <div class="filter" >
+        <div class="filter-label" >
+          <span class="filter-label_texte"
+           >Trier par</span>
         </div>
-        <ul class="filter-select" aria-labelledby="filter-label">
+        <ul class="filter-select">
           <li>
             <button class="filter-button" id="filter-button_one" data-filtermain="false"
               aria-label="Le trie est actuellement par Popularité" aria-expanded="false" type="button"
-              role="button">Popularité</button>
+              >Popularité</button>
           </li>
           <li>
             <button class="filter-button filter-button_aft" id="filter-button_two" data-filter="false"
@@ -76,18 +75,19 @@
         </ul>
       </div>
     </div>
-    <div id="container-main__center" data-modal="false" aria-hidden="true" tabindex="0">
+    <div id="container-main__center" data-modal="false" tabindex="0">
       <div id="content-main__center" data-modal="false">
+       
         <img src="./dist/pictures/icons/arrow_left.svg" alt="image de gauche" class="utility-modal" data-utility="false"
           id="nav-prev" onclick="aftPicture()" width="50" height="50" tabindex="0" role="button" />
-        <img src="./dist/pictures/icons/arrow_right.svg" alt="image de droite" class="utility-modal"
+          <img src="./dist/pictures/icons/arrow_right.svg" alt="image de droite" class="utility-modal"
           data-utility="false" id="nav-fwd" onclick="fwdPicture()" width="50" height="50" tabindex="0" role="button" />
         <img src="./dist/pictures/icons/close_black_24dp.svg" alt="close modal" class="utility-modal"
           data-utility="false" id="close-modal" width="50" height="50" tabindex="0" role="button" />
       </div>
     </div>
-    <section id="container-main__formulaire" tabindex="0">
-      <div class="content-main__formulaire" aria-hidden="true" role="dialog">
+    <section id="container-main__formulaire" tabindex="0" >
+      <div class="content-main__formulaire" aria-hidden="true" role="dialog" aria-label="formulaire de contact ouvert">
         <div class="main-formulaire">
           <span id="modalBtnClose" class="close closeModal" title="Fermer le formulaire d'inscription"
             aria-label="fermer le formulaire" tabindex="0"></span>
@@ -142,7 +142,7 @@
     <div id=information-likes-price>
       <div>
         <span id="nb-likes"></span>
-        <img class="hearth-likes" src="./dist/pictures/icons/heart-like.png" / alt="toto" aria-hidden="true">
+        <img class="hearth-likes" src="./dist/pictures/icons/heart-like.png" / alt="Total likes" aria-hidden="false">
       </div>
       <span id="price"></span>
     </div>

@@ -72,7 +72,6 @@ export function createDomObject(objs) {
     for (let tag of obj.tags) {
       let tagsList = createNodeWithMultiplesAttributes('li', {
         'class': 'cmpt-tags__list',
-        'tabindex': '0'
       })
       let tagsLink = createNodeWithMultiplesAttributes('a', {
         'class': "cmpt-tags__navigation",
@@ -122,7 +121,7 @@ export function createPagePhotographe(objs, name) {
         class: "icone",
         'data-modal': 'false',
         src: "./dist/pictures/icons/heart-regular.svg",
-        'alt': "like"
+        'alt': "like",
       });
       if (obj.image) {
         let img = createNodeWithMultiplesAttributes('img', {
