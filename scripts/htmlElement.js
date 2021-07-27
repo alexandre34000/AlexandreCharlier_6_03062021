@@ -130,7 +130,7 @@ export function createPagePhotographe(objs, name) {
           tabindex: "0",
           'data-modal': "false",
           src: `./dist/pictures/pictures/${photographName}/${obj.image}`,
-          alt: `Photographie de ${photographName}, nommée ${obj.title} `
+          alt: `${obj.description}`
         });
         append(figure, img);
       } else if (obj.video) {
