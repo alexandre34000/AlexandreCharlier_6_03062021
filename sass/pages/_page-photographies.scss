@@ -167,12 +167,13 @@
   width: 30px;
   height: 20px;
   content: "";
-  background: url("./pictures/icons/arrow_up.svg") no-repeat 100% 1%;
+  background: url("../pictures/icons/arrow_up.svg") no-repeat 100% 1%;
   filter: invert(99%) sepia(0%) saturate(7500%) hue-rotate(245deg)
     brightness(103%) contrast(105%);
 }
-#filter-button-one[data-filtermain="true"]:after {
-  background: url("./pictures/icons/arrow_down.svg") no-repeat 100% 1%;
+#filter-button_one[data-filtermain="true"]:after {
+  content:"";
+  background: url("../pictures/icons/arrow_down.svg") no-repeat 100% 1%;
 }
 
 #filter-button_two {
